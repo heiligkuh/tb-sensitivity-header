@@ -7,6 +7,8 @@ While adding this header does not directly add any security to the message, the 
 
 Please note that other MTA/MUA software (e.g. Popular webmail systems, Thunderbird without this add-on) may <i>completely ignore</i> the header as it is not commonly used outside of corporate environments.  Therefore, please do not solely rely on it for ensuring your message is treated as intended.
 
+2-4-2016 - I created this fork of the original to include an additional header when the Sensitivity is set to Confidential so this would work with Sophos UTM and E-mail appliances and SPX encryption. If your e-mail passes through a Sophos device configured for SPX encryption it will see the header and encrypt the e-mail as it is configured. 
+
 ## Known Issues
 
 * When re-opening a draft message where a sensitivity was set, the previous value is not currently retained.
