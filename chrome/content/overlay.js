@@ -61,6 +61,8 @@ var sensitivity_header_management = {
         } else {
             if (val == 'Normal') val = "";
             gMsgCompose.compFields.setHeader(hdr, val);
+            //added this additional header to trigger SPX encryption in Sophos UTM devices
+			if (val == 'Company-Confidential') gMsgCompose.compFields.setHeader('X-Sophos-SPX-Encrypt', 'yes');
             // If setting header to 'Normal' via menu/toolbar, should remove header from message, but I cannot locate an API function to do that yet.. :-(
             // Alternative approach would be to store a value somewhere until message 'send/save/send-later' (add setHeader to those window/message events)
         }
